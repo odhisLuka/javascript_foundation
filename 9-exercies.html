@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+  <title>exercise</title>
+</head>
+
+<body>
+  <!-- <button class="js-heads" onclick="playGame('heads');">heads</button>
+  <button class="js-tails" onclick="playGame('tails');">tails</button> -->
+
+  <input class="js-input" onkeydown="inputHandler(event);">
+  <button class="js-btn" onclick="submitName();">Submit</button>
+  <p class="js-show"></p>
+
+  <script>
+    // function playGame(pChoice) {
+    //   document.querySelector('.js-choice').innerHTML = `You chose: ${pChoice}`;
+    // }
+
+    function inputHandler(event) {
+      if (event.key === 'Enter' || event.key === 'Backspace') {
+        submitName();
+      }
+    }
+
+    function submitName() {
+      const userName = document.querySelector('.js-input');
+      let name = userName.value;
+      document.querySelector('.js-show').innerHTML = `Your name is ${name}`;
+    }
+
+  </script>
+</body>
+
+</html>

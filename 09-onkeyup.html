@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>DOM</title>
+</head>
+
+<body>
+  <input class="js-btn" onkeyup="onkeyUpHandler(event)">
+  <p class="js-output"></p>
+
+  <script>
+    function onkeyUpHandler(event) {
+      const inputElement = document.querySelector('.js-btn');
+      const output = document.querySelector('.js-output');
+
+      output.innerHTML = `${inputElement.value}`;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>exercise</title>
+  <style>
+    .toggle-btn {
+      background-color: whitesmoke;
+      color: black;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .is-toggled {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="toggle-btn js-btn-1" onclick="isToggledON('.js-btn-1');">Gaming</button>
+  <button class="toggle-btn js-btn-2" onclick="isToggledON('.js-btn-2');">Music</button>
+  <button class="toggle-btn js-btn-3" onclick="isToggledON('.js-btn-3');">Tech</button>
+
+  <script>
+
+    function isToggledON(selector) {
+      const buttonElemement = document.querySelector(selector);
+      const checker = buttonElemement.classList.contains('is-toggled');
+
+      if (!checker) {
+        turnOFFButtonIsOn();
+        buttonElemement.classList.add('is-toggled');
+      } else {
+        buttonElemement.classList.remove('is-toggled');
+      }
+    }
+
+    function turnOFFButtonIsOn() { // makes sure that only one button is ON at a time
+      const buttonIsOn = document.querySelector('.is-toggled');
+      if (buttonIsOn) {
+        buttonIsOn.classList.remove('is-toggled');
+      }
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+      const multiply = (a, b) => a * b;
+      console.log(multiply(2, 3));
+    */
+
+    /*
+    const countPositive = nums => {
+      let result = 0;
+      nums.forEach(num => {
+        if (num > 0) {
+          result++;
+        }
+      });
+      return result;
+    }
+
+    console.log(countPositive([-2, 3, -5, 7, 10]));
+    */
+
+    /*
+    const addNum = (array, num) => array.map((value) => value + num);
+    console.log(addNum([1, 2, 3], 2));
+    */
+
+    /*
+    const removeEgg = foods => {
+      let eggsRemoved = 0;
+
+      return foods.filter(food => {
+        // If the food is 'egg', we should return false
+        // but only if we haven't removed 2 eggs already.
+        if (food === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          return false;
+        }
+
+        return true;
+      });
+    }
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+    */
+
+    const removeEgg = foods => { return foods.filter(food => food !== 'egg') }
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+  </script>
+</body>
+
+</html>

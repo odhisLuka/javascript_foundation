@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>App</title>
+</head>
+
+<body>
+  <button id="add-btn">Add</button>
+  <button id="remove-btn">Remove</button>
+
+  <!-- <button id="js-btn">Add to cart</button>
+  <p id="display-msg"></p> -->
+  <script>
+    /*
+    setTimeout(() => {
+      console.log('timeout')
+    }, 3000); // runs a function after a set time
+
+    setInterval(() => {
+      console.log('interval')
+    }, 3000) // will keep running the function after every 3s
+    */
+
+    /*
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach((value, index) => {
+        if (value === 'wash dishes') {
+          return; //acts the same way as continue if for loop
+        }
+        console.log({ value, index });
+      }
+    )
+    */
+
+    /*
+    const add = () => {
+      console.log(2 + 3);
+    }
+
+    const runMultipleTimes = (fun, n) => {
+      for (let i = 0; i < n; i++) {
+        fun();
+      }
+    }
+    runMultipleTimes(add, 4);
+    */
+
+    /*
+    const buttonElement = document.getElementById('js-btn');
+    let timeoutID;
+
+    function onClick() {
+      document.getElementById('display-msg').textContent = 'Added';
+      clearTimeout(timeoutID);
+
+      timeoutID = setTimeout(() => {
+        document.getElementById('display-msg').textContent = '';
+      }, 2000)
+    };
+    buttonElement.addEventListener("click", onClick);
+    */
+
+    //exercise 12g
+    let messages = 0;
+    let intervalID;
+    let isDisplayingNotification;
+
+    function displayNotification() {
+      if (isDisplayingNotification) { // ensures that muitple intervals aren't created at the same time
+        return;
+      }
+      isDisplayingNotification = true;
+      intervalID = setInterval(() => {
+        if (document.title === 'App') {
+          document.title = `(${messages}) New messages`;
+        } else {
+          document.title = 'App';
+        }
+      }, 1000);
+    }
+
+    function stopNotification() {
+      isDisplayingNotification = false;
+      clearInterval(intervalID);
+      document.title = 'App';
+    }
+
+    function addMsgByOne() {
+      messages++;
+      displayNotification();
+    }
+    const addButtonElement = document.getElementById('add-btn');
+    addButtonElement.addEventListener('click', addMsgByOne);
+
+    function removeMsgByOne() {
+      if (messages > 0) {
+        messages--;
+      }
+      if (messages === 0) {
+        stopNotification();
+      }
+    }
+    const removeButtonElement = document.getElementById('remove-btn');
+    removeButtonElement.addEventListener('click', removeMsgByOne);
+
+
+
+  </script>
+</body>
+
+</html>

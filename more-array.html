@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>more exercises</title>
+</head>
+
+<body>
+  <script>
+    // const removeEgg = (array, string) => {
+    //   const arrayCopy = array.slice();
+    //   const reversedFoods = arrayCopy.reverse();
+    //   const foods = [];
+
+    //   let stringRemoved = 0;
+    //   for (let i = 0; i < reversedFoods.length; i++) {
+    //     if (reversedFoods[i] === string && stringRemoved < 2) {
+    //       stringRemoved++;
+    //       continue;
+    //     }
+    //     foods.push(reversedFoods[i]);
+    //   }
+    //   return foods.reverse();
+    // }
+    // console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham'], 'egg'));
+
+    // function fizzBuzz(num) {
+    //   for (let i = 1; i <= num; i++) {
+    //     if (i % 3 === 0 && i % 5 === 0) {
+    //       console.log("FizzBuzz");
+    //     } else if (i % 3 === 0) {
+    //       console.log('Fizz');
+    //     } else if (i % 5 === 0) {
+    //       console.log('Buzz');
+    //     } else {
+    //       console.log(i)
+    //     }
+    //   }
+    // }
+    // fizzBuzz(10)
+
+    function findIndex(array, word) {
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+          return i;
+        }
+      }
+      return -1;
+    }
+
+    function unique(array) {
+      const newArray = [];
+
+      for (let i = 0; i < array.length; i++) {
+        const word = array[i];
+        if (findIndex(newArray, word) === -1) {
+          newArray.push(word);
+        }
+      }
+      return newArray;
+    }
+
+    // console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+    console.log(unique(['green', 'red', 'blue', 'red']));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .main-cont {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-cont>* {
+      background-color: black;
+      color: white;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .color-btn {
+      background-color: orange;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-cont">
+    <button class="options">Option1</button>
+    <button class="options">Option2</button>
+    <button class="options">Option3</button>
+    <button class="options">Option4</button>
+  </div>
+
+  <script>
+    const selector = 'color-btn';
+    let index = 0;
+    const buttonOptionElement = document.querySelectorAll('.options');
+
+    function toggle(selector, index) {
+      for (let index = 0; index < buttonOptionElement.length; index++) {
+        const checker = buttonOptionElement[index].classList.contains(selector);
+        if (!checker) {
+          console.log(buttonOptionElement[index].classList.add(selector));
+          // previousButton();
+        } else {
+          buttonOptionElement[index].classList.remove(selector);
+        }
+      }
+    }
+
+    function previousButton() {
+      const previousButtonOn = buttonOptionElement[index].classList.contains(selector);
+      if (previousButtonOn) {
+        buttonOptionElement[index].classList.remove(selector);
+      }
+    }
+
+    buttonOptionElement.forEach((button) => {
+      button.addEventListener('click', toggle(selector, index));
+    })
+
+
+  </script>
+</body>
+
+</html>

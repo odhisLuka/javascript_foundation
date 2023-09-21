@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>myTodoApp</title>
+
+  <style>
+    body {
+      font-family: arial, sans-serif;
+      font-weight: 300;
+    }
+
+    .todo-input-row,
+    .todo-list {
+      display: grid;
+      grid-template-columns: 200px 150px 100px;
+      align-items: center;
+      column-gap: 10px;
+      row-gap: 10px;
+    }
+
+    .todo-input-row {
+      margin-bottom: 10px;
+      align-items: stretch;
+    }
+
+    .todo-input-row>* {
+      border: solid, 1px, rgb(192, 189, 189);
+      padding: 12px 12px;
+      font-size: 15px;
+      font-weight: 400;
+      cursor: pointer;
+      box-shadow: -0.1px 1px 2px rgb(98, 98, 98);
+    }
+
+    #js-add-btn,
+    .delete-btn {
+      background-color: rgb(179, 7, 7);
+      border: none;
+      color: white;
+      padding: 15px;
+      font-size: 15px;
+      font-weight: 300;
+      cursor: pointer;
+    }
+
+    #js-add-btn {
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Todo List</p>
+  <!-- <label for="input-field">Enter your todo list-item:</label> -->
+  <div class="todo-input-row">
+    <input type="text" placeholder="Todo name" class="todo-input">
+    <input type="date" id="date">
+    <button id="js-add-btn">Add</button>
+  </div>
+  <div class="js-todoList-container todo-list"></div>
+
+
+
+  <script src="11-todo-list.js"></script>
+</body>
+
+</html>

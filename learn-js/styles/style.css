@@ -1,0 +1,73 @@
+  body {
+        background-color: rgb(25 25 25);
+        color: white;
+        font-family: Arial;
+      }
+      
+      .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .js-styling {
+        background-color: whitesmoke;
+      }
+      .title {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      button {
+        cursor: pointer;
+      }
+      .move-icon {
+        height: 50px;
+      }
+      .player-move-button {
+        background-color: transparent;
+        border: solid 3px white;
+        height: 120px;
+        width: 120px;
+        border-radius: 60px;
+        margin-right: 10px;
+      }
+      
+      .result {
+        margin-top: 50px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 25px;
+      }
+
+      .score {
+        margin-top: 50px;
+      }
+
+      .reset-score-btn, .auto-play-btn {
+        background-color: white;
+        font-size: 14px;
+        padding: 8px 10px;
+        border: none;
+      }
+
+      /* This is for confirmation message window */
+      .first-child {
+        position: relative;
+      }
+      .second-child {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(45, 45, 45);
+        padding: 5px 10px;
+        font-size: 20px;
+      }
+      
+      .reset-confirm-btn {
+        background-color: whitesmoke;
+        border: none;
+        padding: 14px 20px;
+        font-size: 20px;
+        margin: 10px;
+      }

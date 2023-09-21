@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<head>
+  <title>DOM projects</title>
+
+  <style>
+    body {
+      font-family: arial;
+      font-size: 1.0em;
+    }
+
+    .subscribe-button {
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 1.4em;
+      padding: 0.7em 1.1em 0.7em 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 2.7em;
+    }
+
+    .is-subscribed {
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+
+    .cost-input {
+      padding: 0.64rem;
+      font-size: 0.95em;
+    }
+
+    .calc-button {
+      border: none;
+      padding: 0.74rem 0.9rem;
+      background-color: green;
+      color: white;
+      font-size: 0.95em;
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: red;
+    }
+
+    .rps-game {
+      margin-top: 55px;
+    }
+  </style>
+</head>
+
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button onclick="subscribe()" class="js-subscribe-btn subscribe-button">Subscribe</button>
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40 = +$10 shipping.</p>
+  <p>Orders over $40 = FREE shipping.</p>
+  <input class="js-cost-input cost-input" placeholder="Cost of order" onkeydown="pressEnterKeyHandler(event)">
+  <button class="js-calc-button calc-button" onclick="calculateTotalPrice();">Calculate</button>
+  <p class="js-totalCost"></p>
+  <p class="error-message"></p>
+  <p class="rps-game">Rock Paper Scissors</p>
+  <a href="learn-js/09-rock-paper-scissors.html">Click here</a>
+
+
+  <script>
+    function pressEnterKeyHandler(event) {
+      if (event.key === 'Enter') {
+        calculateTotalPrice();
+      }
+    }
+    const calculateTotalPrice = () => {
+      const userInputPrice = document.querySelector('.js-cost-input');
+      const userPrice = document.querySelector('.js-totalCost')
+      const errorMessage = document.querySelector('.error-message')
+
+      userPrice.innerHTML = '';
+      errorMessage.innerHTML = '';
+
+      let cost = Number(userInputPrice.value);
+
+      if (cost < 0) {
+        errorMessage.innerHTML = 'Error: cost cannot be less than $0';
+        return;
+      }
+
+      if (cost <= 40) {
+        cost += 10;
+        userPrice.innerHTML = `$${cost}`;
+      }
+    }
+
+    function subscribe() {
+      const buttonElement = document.querySelector('.js-subscribe-btn');
+
+      if (buttonElement.innerText === 'Subscribe') {
+        buttonElement.innerHTML = 'Subscribed';
+        buttonElement.classList.add('is-subscribed');
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
+      }
+    }
+  </script>
+</body>
+
+</html>
